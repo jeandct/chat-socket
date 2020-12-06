@@ -9,7 +9,7 @@ export const SocketContext = createContext({
 const SocketContextProvider = ({ children }) => {
   const [nickname, setNickname] = useState('');
 
-  const socket = io('http://localhost:8080');
+  const socket = io('https://jeandct-chat-api.herokuapp.com');
 
   return (
     <SocketContext.Provider value={{ socket, nickname, setNickname }}>
