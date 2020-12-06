@@ -22,9 +22,7 @@ const ChatRoom = () => {
     });
 
     socket.on('all_users_connected', (user) => {
-      setUsers((prevUsers) => {
-        return [...prevUsers, user];
-      });
+      setUsers([user]);
     });
 
     socket.on('chat_message', (message) => {
