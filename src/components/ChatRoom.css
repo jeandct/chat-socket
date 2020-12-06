@@ -1,0 +1,50 @@
+.chatRoom-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px auto;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.chat-container {
+  border: 1px solid black;
+  width: 80vw;
+  height: 60vh;
+  margin: 20px auto;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-user {
+  display: flex;
+  margin: 15px 30px;
+}
+
+.user-nickname {
+  color: green;
+  margin: 0px 50px;
+}
+
+.users-connected-container {
+  border: 1px solid black;
+  height: 60vh;
+  width: 10vw;
+  margin: 20px 0;
+}
+
+.users-connected {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.user-status {
+  border-radius: 50%;
+  background-color: green;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}

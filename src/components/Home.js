@@ -11,16 +11,18 @@ const Home = () => {
     history.push('/chat');
   };
   return (
-    <label>
-      {' '}
-      Nickname:
-      <input
-        type='text'
-        onChange={(e) => setNickname(e.target.value)}
-        value={nickname}
-      />
-      <input type='submit' value='Join' onClick={joinChat} />
-    </label>
+    <form onSubmit={joinChat}>
+      <label>
+        {' '}
+        Nickname:
+        <input
+          type='text'
+          onChange={(e) => setNickname(e.target.value)}
+          value={nickname}
+        />
+        <button type='submit'>Join Chat</button>
+      </label>
+    </form>
   );
 };
 
