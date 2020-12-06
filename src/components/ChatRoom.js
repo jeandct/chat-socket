@@ -22,7 +22,7 @@ const ChatRoom = () => {
     });
 
     socket.on('all_users_connected', (user) => {
-      setUsers([user]);
+      setUsers(user);
     });
 
     socket.on('chat_message', (message) => {
@@ -51,8 +51,9 @@ const ChatRoom = () => {
         </div>
         <ChatMessage />
       </div>
-
-      <ChatUsers users={users} />
+      <div className='users-connected-container'>
+        <ChatUsers users={users} />
+      </div>
     </div>
   );
 };

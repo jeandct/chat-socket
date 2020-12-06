@@ -3,16 +3,19 @@ import './ChatRoom.css';
 
 const ChatUsers = ({ users }) => {
   return (
-    <div className='users-connected-container'>
-      {users.map((user, index) => {
-        return (
-          <div key={index} className='users-connected'>
-            <div className='user-status'></div>
-            {user}
-          </div>
-        );
-      })}
-    </div>
+    users &&
+    users.length > 0 && (
+      <div className='users-connected'>
+        {users.map((user, index) => {
+          return (
+            <div className='user-info' key={index}>
+              <div className='user-status'></div>
+              {user.username}
+            </div>
+          );
+        })}
+      </div>
+    )
   );
 };
 

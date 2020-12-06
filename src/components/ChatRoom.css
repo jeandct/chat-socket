@@ -29,6 +29,8 @@
 }
 
 .users-connected-container {
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   height: 60vh;
   width: 10vw;
@@ -37,8 +39,14 @@
 
 .users-connected {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   padding: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .user-status {
