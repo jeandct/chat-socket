@@ -14,7 +14,7 @@ const Home = () => {
     <form onSubmit={joinChat}>
       <label>
         {' '}
-        Nickname:
+        username:
         <input
           type='text'
           onChange={(e) => setNickname(e.target.value)}

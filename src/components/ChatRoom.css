@@ -14,13 +14,15 @@
 }
 
 .message-container {
+  height: inherit;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
 }
 
 .message-user {
   display: flex;
-  margin: 15px 30px;
+  margin: 10px 30px;
 }
 
 .user-nickname {

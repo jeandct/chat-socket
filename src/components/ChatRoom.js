@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { SocketContext } from '../contexts/socketContext';
 import ChatMessage from './ChatMessage';
 import './ChatRoom.css';
@@ -8,6 +8,13 @@ const ChatRoom = () => {
   const { socket, nickname } = useContext(SocketContext);
   const [chat, setChat] = useState([]);
   const [users, setUsers] = useState([]);
+
+  const messageEndRef = useRef(null);
+
+  useEffect(() => {
+    chat.length > 0 &&
+      messageEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [chat]);
 
   useEffect(() => {
     socket.on('connection', (id) => {
@@ -41,7 +48,7 @@ const ChatRoom = () => {
           <div className='message-container'>
             {chat.map((msg, index) => {
               return (
-                <div className='message-user' key={index}>
+                <div className='message-user' ref={messageEndRef} key={index}>
                   <div className='user-nickname'>{msg.nickname} : </div>{' '}
                   <div className='user-message'>{msg.message}</div>
                 </div>
